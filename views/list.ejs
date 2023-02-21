@@ -1,0 +1,25 @@
+
+<%- include("header") -%>
+    <% /*here as we used javascript in .ejs file so need to use this symbol for every line where js is used */%>
+    <div class="box" id="heading">
+        <h1> <%= listTitle %> </h1>
+    </div>
+    
+    <div class="box">
+        <%  for(var i=0;i<newListItem.length;i++) { %>
+        <div class="item">
+            <input type="checkbox"/>
+            <p> <%= newListItem[i] %> </p>
+        </div>
+            
+                 
+            <%  } %>
+
+            <form class="item" method="post" action="/">
+                <input type="text" name="todo" placeholder="Add Item" autocomplete="off" required/>
+                <button type="submit" name="list" value="<%= listTitle %>">+</button>
+            </form>
+    </div>
+
+    
+<%- include("footer") -%>
